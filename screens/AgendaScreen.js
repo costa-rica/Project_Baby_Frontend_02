@@ -144,7 +144,7 @@ export default function AgendaScreen({ navigation }) {
   const fetchData = () => {
     fetch(
       // Fait une requête pour récupérer les rendez-vous de l'utilisateur
-      `${process.env.EXPO_PUBLIC_API_URL}/rdv/${projectToken}`
+      `${process.env.EXPO_PUBLIC_API_URL}rdv/${projectToken}`
     )
       .then((response) => response.json()) // Transforme la réponse en JSON
       .then((data) => {
@@ -218,7 +218,7 @@ export default function AgendaScreen({ navigation }) {
       heure,
     };
 
-    fetch(`${process.env.EXPO_PUBLIC_API_URL}/rdv/${projectToken}`, {
+    fetch(`${process.env.EXPO_PUBLIC_API_URL}rdv/${projectToken}`, {
       // Envoie une requête POST
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -288,7 +288,7 @@ export default function AgendaScreen({ navigation }) {
       return;
     }
 
-    fetch(`${process.env.EXPO_PUBLIC_API_URL}/rdv/${projectToken}/${rdvId}`, {
+    fetch(`${process.env.EXPO_PUBLIC_API_URL}rdv/${projectToken}/${rdvId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -319,7 +319,7 @@ export default function AgendaScreen({ navigation }) {
     console.log(updatedRdv);
 
     // Fait une requête PUT pour mettre à jour le rendez-vous avec les nouvelles informations
-    fetch(`${process.env.EXPO_PUBLIC_API_URL}/rdv/${projectToken}/${rdvId}`, {
+    fetch(`${process.env.EXPO_PUBLIC_API_URL}rdv/${projectToken}/${rdvId}`, {
       method: "PUT", // Spécifie la méthode PUT pour la mise à jour
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedRdv), // Convertit l'objet updatedRdv en JSON pour l'envoyer

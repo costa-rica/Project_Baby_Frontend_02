@@ -22,7 +22,7 @@ export default function VwStockerImage(props) {
       type: "image/jpeg",
     });
 
-    fetch(`${process.env.EXPO_PUBLIC_API_URL}/document/uploadPhoto`, {
+    fetch(`${process.env.EXPO_PUBLIC_API_URL}document/uploadPhoto`, {
       method: "POST",
       body: formData,
     })

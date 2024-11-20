@@ -46,7 +46,7 @@ export default function DocumentsScreen({ navigation }) {
 
   const poubelleAppuyee = (elem) => {
     if (userRedux.role != "lecteur") {
-      fetch(`${process.env.EXPO_PUBLIC_API_URL}/document/${elem._id}`, {
+      fetch(`${process.env.EXPO_PUBLIC_API_URL}document/${elem._id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -70,7 +70,7 @@ export default function DocumentsScreen({ navigation }) {
 
   const fetchData = () => {
     fetch(
-      `${process.env.EXPO_PUBLIC_API_URL}/document/${userRedux.tokenProject}`
+      `${process.env.EXPO_PUBLIC_API_URL}document/${userRedux.tokenProject}`
     )
       .then((response) => response.json())
       .then((data) => {

@@ -74,7 +74,7 @@ export default function AcceuilScreen({ navigation }) {
     if (projectToken) {
       fetch(
         // Fait une requête pour récupérer les rendez-vous de l'utilisateur
-        `${process.env.EXPO_PUBLIC_API_URL}/rdv/${projectToken}`
+        `${process.env.EXPO_PUBLIC_API_URL}rdv/${projectToken}`
       )
         .then((response) => response.json()) // Transforme la réponse en JSON
         .then((data) => {

@@ -57,7 +57,7 @@ export default function CarnetBebeScreen({ navigation }) {
     console.log("new user:", user);
     console.log("tokenProject:", tokenProject);
     if (username && tokenProject) {
-      fetch(`${process.env.EXPO_PUBLIC_API_URL}/carnetbebe/${tokenProject}`)
+      fetch(`${process.env.EXPO_PUBLIC_API_URL}carnetbebe/${tokenProject}`)
         .then((response) => response.json())
         .then((carnetBebe) => {
           setdocBebe(carnetBebe);
@@ -107,7 +107,7 @@ export default function CarnetBebeScreen({ navigation }) {
       };
       // fetch pour sauvegarder en BDD nouveau document carnet bebe
       fetch(
-        `${process.env.EXPO_PUBLIC_API_URL}/carnetbebe/ajout/${tokenProject}`,
+        `${process.env.EXPO_PUBLIC_API_URL}carnetbebe/ajout/${tokenProject}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -146,7 +146,7 @@ export default function CarnetBebeScreen({ navigation }) {
     }
 
     fetch(
-      `${process.env.EXPO_PUBLIC_API_URL}/carnetbebe/${tokenProject}/${docBebe}`,
+      `${process.env.EXPO_PUBLIC_API_URL}carnetbebe/${tokenProject}/${docBebe}`,
       {
         method: "DELETE",
       }

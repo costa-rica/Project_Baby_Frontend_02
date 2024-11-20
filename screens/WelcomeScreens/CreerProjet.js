@@ -98,7 +98,7 @@ export default function CreerProjetScreen({ navigation }) {
           email: email,
         };
 
-        fetch(`${process.env.EXPO_PUBLIC_API_URL}/user/signupProject`, {
+        fetch(`${process.env.EXPO_PUBLIC_API_URL}user/signupProject`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(bodyObj),

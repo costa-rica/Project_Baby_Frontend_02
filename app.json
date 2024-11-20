@@ -1,39 +1,41 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "projectbabyfront",
+    "name": "Project_Baby_Frontend_02",
+    "slug": "Project_Baby_Frontend_02",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "y"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.costarica.Project_Baby_Frontend_02"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "586ee30b-84cc-4038-bc66-95b6d4896b26"
+        "projectId": "1944ef92-24d6-4fe6-bb3e-35b3c2f150cd"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/586ee30b-84cc-4038-bc66-95b6d4896b26"
-    },
-    "owner": "bouddha.dev"
+      "url": "https://u.expo.dev/1944ef92-24d6-4fe6-bb3e-35b3c2f150cd"
+    }
   }
 }

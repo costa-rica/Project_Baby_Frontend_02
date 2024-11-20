@@ -27,7 +27,7 @@ export default function LoginScreen({ navigation }) {
   const [messageError, messageErrorSetter] = useState("");
 
   const pressedLogin = () => {
-    // console.log("- aller à LoginScreen 📢");
+    console.log("- aller à LoginScreen 📢");
     envoyerDataSetter(true);
   };
 
@@ -42,14 +42,15 @@ export default function LoginScreen({ navigation }) {
     () => {
       // <-- que une seul fois, quand le composant arriver
       if (envoyerData) {
-        // console.log("- envoyerData 🚀");
+        console.log("- envoyerData 🚀");
+        console.log(`${process.env.EXPO_PUBLIC_API_URL}user/signin`);
         const bodyObj = {
           username: username,
           password: password,
         };
 
         fetch(
-          `${process.env.EXPO_PUBLIC_API_URL}/user/signin`,
+          `${process.env.EXPO_PUBLIC_API_URL}user/signin`,
           // fetch("http://192.168.1.156:3000/user/signin",
           {
             method: "POST",
@@ -59,7 +60,7 @@ export default function LoginScreen({ navigation }) {
         )
           .then((response) => response.json())
           .then((data) => {
-            // console.log(`--- bien reçu le reponse ✅ `);
+            console.log(`--- bien reçu le reponse ✅ `);
             // console.log({ result: true, reponse: data });
             console.log("data =>", data);
             // console.log("data.response.token =>", data.response.token);
@@ -96,7 +97,7 @@ export default function LoginScreen({ navigation }) {
       <View style={styles.container}>
         {modalEchecVisible ? modalEchec : null}
         <View style={styles.vwInstructions}>
-          <Text style={styles.txtInstructions}> Connexion </Text>
+          <Text style={styles.txtInstructions}>Connexion</Text>
         </View>
 
         <View style={styles.vwInputSuper}>
@@ -131,7 +132,12 @@ export default function LoginScreen({ navigation }) {
         </View>
 
         <View style={styles.vwBtn}>
-          <TouchableOpacity style={styles.btn} onPress={() => pressedLogin()}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => {
+              pressedLogin();
+            }}
+          >
             <Text style={styles.btnText}>connexion</Text>
           </TouchableOpacity>
         </View>

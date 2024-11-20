@@ -77,7 +77,7 @@ export default function VwAjouterDocument(props) {
       notes: notes,
       url: documentRedux.photos,
     };
-    fetch(`${process.env.EXPO_PUBLIC_API_URL}/document/add`, {
+    fetch(`${process.env.EXPO_PUBLIC_API_URL}document/add`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(bodyObj),

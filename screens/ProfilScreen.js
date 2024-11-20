@@ -64,7 +64,7 @@ export default function Profil({ navigation }) {
   const fetchData = () => {
     fetch(
       // fait une requête pour récupérer les infos utilisateur
-      `${process.env.EXPO_PUBLIC_API_URL}/user/${projectToken}`
+      `${process.env.EXPO_PUBLIC_API_URL}user/${projectToken}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -95,7 +95,7 @@ export default function Profil({ navigation }) {
 
     // Fait une requête PUT pour mettre à jour l'utilisateur avec les nouvelles informations
     fetch(
-      `${process.env.EXPO_PUBLIC_API_URL}/user/${projectToken}/${userToken}`,
+      `${process.env.EXPO_PUBLIC_API_URL}user/${projectToken}/${userToken}`,
       {
         method: "PUT", // Spécifie la méthode PUT pour la mise à jour
         headers: { "Content-Type": "application/json" },
@@ -130,7 +130,7 @@ export default function Profil({ navigation }) {
 
     // Fait une requête PUT pour mettre à jour l'utilisateur avec les nouvelles informations
     fetch(
-      `${process.env.EXPO_PUBLIC_API_URL}/user/password/${projectToken}/${userToken}`,
+      `${process.env.EXPO_PUBLIC_API_URL}user/password/${projectToken}/${userToken}`,
       {
         method: "PUT", // Spécifie la méthode PUT pour la mise à jour
         headers: { "Content-Type": "application/json" },

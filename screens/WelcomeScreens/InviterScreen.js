@@ -51,7 +51,7 @@ export default function InviterScreen({ navigation }) {
         };
 
         fetch(
-          `${process.env.EXPO_PUBLIC_API_URL}/user/invites/${link}`,
+          `${process.env.EXPO_PUBLIC_API_URL}user/invites/${link}`,
           // fetch("http://192.168.1.156:3000/user/signin",
           {
             method: "POST",
